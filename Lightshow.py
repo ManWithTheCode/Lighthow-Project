@@ -10,11 +10,17 @@ Create a lightshow for the Jack-o-lantern.
 It must use multiple colors that are associated with the holiday.
 It must demonstrate multiple lighting effects (at least 5 different ones).
 '''
+# Lighthow-Project
+'''
+Create a lightshow for the Jack-o-lantern.
+It must use multiple colors that are associated with the holiday.
+It must demonstrate multiple lighting effects (at least 5 different ones).
+'''
 import board
 import neopixel
 import time
 import random
-BRIGHTNESS = 1.0
+BRIGHTNESS = 0.5
 np = neopixel.NeoPixel(board.NEOPIXEL, 10, brightness=BRIGHTNESS, auto_write=False)
 num_pixels = 10
 # Changes the opacity for selected colors/elements from visible to hidden.
@@ -111,12 +117,22 @@ def chase(color1, color2, loop=20, count=3, delay=0.1):
         result %= count
         np.show()
 while True:
-    fire((36, 2, 120), (95, 52, 145))
-    light((255, 255, 255), (255, 255, 255))
-    fire((36, 2, 120), (95, 52, 145))
+    for i in range(2):
+        fire((30, 1, 46), (214, 104, 11))
+        light((255, 129, 0), (255, 129, 0))
+        fire((101, 83, 0), (214, 104, 11))
     fade_out([36, 2, 120], 0.01)
-    fade_in([2, 255, 50], 0.01)
-    fade_out([2, 255, 50], 0.01)
+    fade_in([0, 75, 0], 0.01)
+    fade_out([0, 75, 0], 0.01)
+    chase((58, 0, 0), (30, 1, 46))
+    for i in range(5):
+        sparkle((44, 135, 50) , (44, 135 , 40) , 5)
+
+
+
+
+
+
 
 
 
